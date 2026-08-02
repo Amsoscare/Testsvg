@@ -1,0 +1,302 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="1400" height="900">
+  <defs>
+    <style>
+      .bg { fill: #011116; }
+      .brd { stroke: #384451; stroke-width: 1.5; fill: rgba(2, 32, 38, 0.85); rx: 10px; }
+      .brd-line { stroke: #384451; stroke-width: 1.5; fill: none; }
+      
+      .t-green { fill: #2AEA5E; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-white { fill: #FFFFFF; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-gray { fill: #59819C; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-bright-white { fill: #58FBD6; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-blue { fill: #61D5BA; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-title { fill: #2AEA5E; font-family: 'Courier New', Courier, monospace; font-size: 42px; font-weight: bold; }
+      
+      .bar-bg { fill: #384451; rx: 3px; }
+      .bar-fg { fill: #2AEA5E; rx: 3px; }
+      
+      .pill { fill: rgba(2, 32, 38, 0.6); stroke: #384451; stroke-width: 1; rx: 14px; transition: all 0.3s ease; }
+      
+      /* Base ASCII Style */
+      .ascii {
+        fill: #2AEA5E;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 10px;
+        white-space: pre;
+      }
+
+      /* Animations */
+      @keyframes float-slow {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-30px) scale(1.05); }
+      }
+      @keyframes sway {
+        0%, 100% { transform: skewX(0deg) translateX(0px); }
+        50% { transform: skewX(1.5deg) translateX(4px); }
+      }
+      @keyframes cyber-glitch {
+        0%, 93%, 100% { transform: translate(0, 0) skew(0deg); opacity: 1; filter: none; }
+        94% { transform: translate(-6px, 2px) skew(3deg); opacity: 0.8; filter: drop-shadow(4px 0 0 #FF4242) drop-shadow(-4px 0 0 #61D5BA); }
+        96% { transform: translate(6px, -2px) skew(-3deg); opacity: 0.9; filter: drop-shadow(-3px 0 0 #FF4242) drop-shadow(3px 0 0 #61D5BA); }
+        98% { transform: translate(-2px, 4px) skew(1deg); opacity: 1; filter: none; }
+      }
+
+      .float-blob-1 { animation: float-slow 12s ease-in-out infinite; }
+      .float-blob-2 { animation: float-slow 15s ease-in-out infinite reverse; }
+      .wind-wrapper { animation: sway 6s ease-in-out infinite; }
+      .glitch-target { animation: cyber-glitch 7s infinite; }
+      
+      a:hover .t-blue { fill: #58FBD6; text-decoration: underline; }
+    </style>
+
+    <!-- Wind Filter for ASCII (Cloth Wave Effect) -->
+    <filter id="wind-ripple" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="1" result="noise">
+        <animate attributeName="baseFrequency" values="0.01 0.04; 0.015 0.06; 0.01 0.04" dur="8s" repeatCount="indefinite" />
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G">
+        <animate attributeName="scale" values="2; 8; 2" dur="6s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+
+    <!-- Background Blur for Orbs -->
+    <filter id="bg-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="90" />
+    </filter>
+
+    <!-- Scanline Pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="rgba(255,255,255,0.015)"/>
+    </pattern>
+
+    <!-- Clip path mask for typing effect -->
+    <clipPath id="typing-mask">
+      <rect x="245" y="810" height="40" width="0">
+        <animate attributeName="width" values="0; 0; 365; 365; 0" keyTimes="0; 0.15; 0.6; 0.95; 1" dur="10s" repeatCount="indefinite" />
+      </rect>
+    </clipPath>
+  </defs>
+
+  <!-- Background Layers -->
+  <rect width="1400" height="900" class="bg" rx="10"/>
+  
+  <!-- Floating Glow Orbs -->
+  <circle cx="300" cy="200" r="200" fill="#00599D" filter="url(#bg-blur)" opacity="0.3" class="float-blob-1"/>
+  <circle cx="1100" cy="700" r="250" fill="#459A86" filter="url(#bg-blur)" opacity="0.2" class="float-blob-2"/>
+  <rect width="1400" height="900" fill="url(#scanlines)" pointer-events="none" rx="10"/>
+
+  <!-- Glitch Target Group -->
+  <g class="glitch-target">
+
+    <!-- Main Window Frame -->
+    <rect x="15" y="15" width="1370" height="870" class="brd">
+      <animate attributeName="stroke" values="#384451; #61D5BA; #384451" dur="10s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Window Controls -->
+    <circle cx="45" cy="40" r="7" fill="#FF4242"/>
+    <circle cx="68" cy="40" r="7" fill="#8ED4FD"/>
+    <circle cx="91" cy="40" r="7" fill="#2AEA5E"/>
+    <text x="120" y="45" class="t-bright-white">phantrongkien / README.md</text>
+    <text x="1200" y="45" class="t-bright-white">LAST COMMIT: NOW</text>
+    <line x1="15" y1="65" x2="1385" y2="65" class="brd-line"/>
+
+    <!-- ASCII Skull Art (Scaled down by 15% and moved down to Y=160 to avoid overlap) -->
+    <g transform="translate(100, 160) scale(0.85)" class="wind-wrapper" filter="url(#wind-ripple)">
+      <!-- Explicit Y to force correct baseline in strict SVG viewers -->
+      <text class="ascii" x="0" y="20" xml:space="preserve">
+<tspan x="0" dy="1.2em">                    ..::cccccc:.</tspan>
+<tspan x="0" dy="1.2em">               ..cloddoc..::lolc::..</tspan>
+<tspan x="0" dy="1.2em">             ..;lodxk0O00KX0o:::..:.</tspan>
+<tspan x="0" dy="1.2em">             .c0NMMMMMMMMMMMMMMHOo::..</tspan>
+<tspan x="0" dy="1.2em">            .dNMMMMMMMMMMMMMMMMMMMMWd:..</tspan>
+<tspan x="0" dy="1.2em">            ;dMMMMMMMMMMMMMMMMMMMMMMNo..</tspan>
+<tspan x="0" dy="1.2em">            ;kMMMMMMMMMMMMMMMMMMMMMMMMk:.</tspan>
+<tspan x="0" dy="1.2em">            ;kMMMMMMMMMMMMMMWx::::::::MMx.</tspan>
+<tspan x="0" dy="1.2em">           :xMMMMMMMMMMMWX:::..::.:::MMd.</tspan>
+<tspan x="0" dy="1.2em">          ;OMMMMMMWX?::::..       .Mds.</tspan>
+<tspan x="0" dy="1.2em">          ;KMMMMMMK;    .::kX..  ..;MMMk,.</tspan>
+<tspan x="0" dy="1.2em">          :XMMM::;:::.,;olc:MMkXcc:;MMXx. ;</tspan>
+<tspan x="0" dy="1.2em">          :dMMM;dMMM,.:;okOko:,.;::;::MMMO: ;</tspan>
+<tspan x="0" dy="1.2em">          ;kMMM::kMMM::xNMMNk::.  .:;MMMk.:</tspan>
+<tspan x="0" dy="1.2em">          ;kMMM:.;kMMMk::O0MMX00::. .;MMMHc</tspan>
+<tspan x="0" dy="1.2em">          :kMMMk.::xkWMK:.;xkMMMNXx:.;kMMMMk.</tspan>
+<tspan x="0" dy="1.2em">          ..XMMMO.   :ocOMMMMMMMOdo:..:oMMMMX.</tspan>
+<tspan x="0" dy="1.2em">          .:dMMMMk.   ::cbbB0otools:  ;kMMMMd..</tspan>
+<tspan x="0" dy="1.2em">         .,kMMMMWk    :.;;oNMMMWoc... .ikMMMMMk,.</tspan>
+<tspan x="0" dy="1.2em">         .:kNMMMMMk.:c;  MOOc..    .kNMMMMMMMd..</tspan>
+<tspan x="0" dy="1.2em">        ..dNMMMMMMMDx:.   ::cOdO:.   .xNMMMMMMMMNd.:.</tspan>
+<tspan x="0" dy="1.2em">       ..oXMMMMMMMMMMMMOx..  ::cOO::...  .oXMMMMMMMMMMMMX::.</tspan>
+<tspan x="0" dy="1.2em">       .,lk00XWMMMMMMMMMM0kl.  :::.::..;okOXWMMMMMMMMMMMK;:.</tspan>
+<tspan x="0" dy="1.2em">       .;c:clodk0XXMMMMMMMMMMMMNko. .:.  .:okQNMMMMMMMMMMMMNNo;,. </tspan>
+<tspan x="0" dy="1.2em">       .;::;looccXXMMMMMMMMMMMNo..     .:okNMMMMMMMMMMMMMMO:.:. </tspan>
+<tspan x="0" dy="1.2em">        ..,,.......,,.......           ......,....,....</tspan>
+      </text>
+    </g>
+
+    <!-- > whoami section -->
+    <rect x="560" y="85" width="530" height="380" class="brd"/>
+    <text x="585" y="115" class="t-green">> whoami</text>
+    <text x="585" y="165" class="t-title">Phantrongkien</text>
+    <text x="585" y="195" class="t-bright-white">aka </text>
+    <text x="625" y="195" class="t-blue">kiendev.exe</text>
+    <text x="585" y="230" class="t-green">> Developer | Builder | Learner</text>
+    <line x1="585" y1="245" x2="1065" y2="245" class="brd-line"/>
+    <text x="585" y="275" class="t-white">My coding journey started with learning about the batch files</text>
+    <text x="585" y="298" class="t-white">available on Windows, I am trying to design the most perfect</text>
+    <text x="585" y="321" class="t-white">multi-tool possible.</text>
+    <text x="585" y="354" class="t-white">After mastering batch, I plan to switch to writing this tool</text>
+    <text x="585" y="377" class="t-white">in Python to optimize and expand its features.</text>
+    <text x="585" y="410" class="t-white">Although I'm just a skid at the moment, I hope to be able to</text>
+    <text x="585" y="433" class="t-white">create many unique and useful tools in the future.</text>
+
+    <!-- ./info section (No icons) -->
+    <rect x="1110" y="85" width="250" height="380" class="brd"/>
+    <text x="1130" y="115" class="t-green">./info</text>
+    <text x="1130" y="150" class="t-bright-white">Location</text>
+    <text x="1130" y="172" class="t-gray">Vietnam</text>
+    <text x="1130" y="205" class="t-bright-white">Education</text>
+    <text x="1130" y="227" class="t-gray">High School Student</text>
+    <text x="1130" y="260" class="t-bright-white">Current Focus</text>
+    <text x="1130" y="282" class="t-gray">Building tools</text>
+    <text x="1130" y="304" class="t-gray">&amp; Cyber Security</text>
+    <text x="1130" y="337" class="t-bright-white">Portfolio</text>
+    <text x="1130" y="359" class="t-blue">Coming soon...</text>
+    <text x="1130" y="392" class="t-bright-white">GitHub</text>
+    <a href="https://github.com/phantrongkien" target="_blank" style="cursor: pointer;">
+      <text x="1130" y="414" class="t-blue">github.com/phantrongkien</text>
+    </a>
+
+    <!-- system@phantrongkien -->
+    <rect x="30" y="485" width="300" height="280" class="brd"/>
+    <text x="50" y="515" class="t-green">system@phantrongkien</text>
+    <text x="50" y="550" class="t-green">OS</text><text x="160" y="550" class="t-white">Windows Server</text>
+    <text x="50" y="582" class="t-green">SHELL</text><text x="160" y="582" class="t-white">PowerShell 7</text>
+    <text x="50" y="614" class="t-green">EDITOR</text><text x="160" y="614" class="t-white">VS Code</text>
+    <text x="50" y="646" class="t-green">TIMEZONE</text><text x="160" y="646" class="t-white">GMT+7</text>
+    <text x="50" y="678" class="t-green">UPTIME</text><text x="160" y="678" class="t-white">24/7 Learning</text>
+    <text x="50" y="710" class="t-green">FOCUS</text><text x="160" y="710" class="t-white">Building tools &amp;</text>
+    <text x="160" y="732" class="t-white">Learning security</text>
+
+    <!-- skills.progress -->
+    <rect x="350" y="485" width="280" height="280" class="brd"/>
+    <text x="370" y="515" class="t-green">skills.progress</text>
+    <text x="370" y="550" class="t-white">Batch</text>
+    <rect x="480" y="538" width="80" height="12" class="bar-bg"/><rect x="480" y="538" width="72" height="12" class="bar-fg"/><text x="570" y="550" class="t-blue">90%</text>
+    <text x="370" y="580" class="t-white">Python</text>
+    <rect x="480" y="568" width="80" height="12" class="bar-bg"/><rect x="480" y="568" width="60" height="12" class="bar-fg"/><text x="570" y="580" class="t-blue">75%</text>
+    <text x="370" y="610" class="t-white">Networking</text>
+    <rect x="480" y="598" width="80" height="12" class="bar-bg"/><rect x="480" y="598" width="56" height="12" class="bar-fg"/><text x="570" y="610" class="t-blue">70%</text>
+    <text x="370" y="640" class="t-white">Cyber Sec</text>
+    <rect x="480" y="628" width="80" height="12" class="bar-bg"/><rect x="480" y="628" width="52" height="12" class="bar-fg"/><text x="570" y="640" class="t-blue">65%</text>
+    <text x="370" y="670" class="t-white">Web Dev</text>
+    <rect x="480" y="658" width="80" height="12" class="bar-bg"/><rect x="480" y="658" width="48" height="12" class="bar-fg"/><text x="570" y="670" class="t-blue">60%</text>
+    <text x="370" y="700" class="t-white">Linux</text>
+    <rect x="480" y="688" width="80" height="12" class="bar-bg"/><rect x="480" y="688" width="48" height="12" class="bar-fg"/><text x="570" y="700" class="t-blue">60%</text>
+    <text x="370" y="730" class="t-white">Problem Solv</text>
+    <rect x="480" y="718" width="80" height="12" class="bar-bg"/><rect x="480" y="718" width="68" height="12" class="bar-fg"/><text x="570" y="730" class="t-blue">85%</text>
+
+    <!-- tech_stack (Pure Native SVG code without external links, precisely aligned) -->
+    <rect x="650" y="485" width="710" height="125" class="brd"/>
+    <text x="670" y="515" class="t-green">> tech_stack</text>
+    
+    <g transform="translate(670, 530)">
+      <!-- Row 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="100" height="28" class="pill"/>
+        <path d="M0 2.5L7 1.5V7.5H0V2.5ZM0 8.5H7V14.5L0 13.5V8.5ZM8 1.2L16 0V7.5H8V1.2ZM8 8.5H16V16L8 14.8V8.5Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">Windows</text>
+      </g>
+      <g transform="translate(110, 0)">
+        <rect width="90" height="28" class="pill"/>
+        <path d="M7.5 0C5.5 0 3.5 2 3.5 5C3.5 6.5 4 7.5 4.5 8C3 8.5 2 10 2 12C2 14.5 4 16 7.5 16C11 16 13 14.5 13 12C13 10 12 8.5 10.5 8C11 7.5 11.5 6.5 11.5 5C11.5 2 9.5 0 7.5 0Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">Linux</text>
+      </g>
+      <g transform="translate(210, 0)">
+        <rect width="95" height="28" class="pill"/>
+        <path d="M7 0C3 0 3 1.5 3 1.5H11V3.5H3C1 3.5 1 6.5 3 6.5H4V5.5C4 4.5 5 3.5 7 3.5H11C13 3.5 13 6.5 13 6.5V8.5C13 10.5 11 10.5 11 10.5H7V9.5H8C10 9.5 10 8.5 10 8.5V7.5H7C3 7.5 3 10.5 3 10.5C3 12.5 5 12.5 7 12.5C11 12.5 11 11 11 11H3V9.5H11C13 9.5 13 6.5 13 6.5V5.5C13 4.5 12 3.5 11 3.5H7C5 3.5 5 6.5 5 6.5V5.5C5 4.5 6 3.5 7 3.5H11C11 3.5 11 0 7 0Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">Python</text>
+      </g>
+      <g transform="translate(315, 0)">
+        <rect width="90" height="28" class="pill"/>
+        <path d="M1.5 1L2.5 12L7.5 14L12.5 12L13.5 1H1.5ZM10.5 9L10.3 11L7.5 11.8L4.7 11L4.5 9H6L6.1 10L7.5 10.5L8.9 10L9 9L4.2 9L3.8 5H9.5L9.6 4H3.7L3.5 2H11.5L10.5 9Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">HTML5</text>
+      </g>
+      <g transform="translate(415, 0)">
+        <rect width="85" height="28" class="pill"/>
+        <path d="M1.5 1L2.5 12L7.5 14L12.5 12L13.5 1H1.5ZM10.5 9L10.3 11L7.5 11.8L4.7 11L4.5 9H6L6.1 10L7.5 10.5L8.9 10L9 9L4.2 9L4.5 7H9.2L9.4 5H3.8L3.5 2H11.5L10.5 9Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">CSS3</text>
+      </g>
+      <g transform="translate(510, 0)">
+        <rect width="125" height="28" class="pill"/>
+        <rect x="10" y="7" width="14" height="14" fill="none" stroke="#58FBD6" stroke-width="1.5"/>
+        <text x="17" y="18" font-size="9" font-family="monospace" font-weight="bold" fill="#58FBD6" text-anchor="middle">JS</text>
+        <text x="32" y="19" class="t-white">JavaScript</text>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 40)">
+        <rect width="90" height="28" class="pill"/>
+        <rect x="10" y="8" width="14" height="12" rx="1" fill="none" stroke="#58FBD6" stroke-width="1.5"/>
+        <path d="M12 11L14 13L12 15M15.5 15H19" stroke="#58FBD6" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="32" y="19" class="t-white">Batch</text>
+      </g>
+      <g transform="translate(100, 40)">
+        <rect width="125" height="28" class="pill"/>
+        <rect x="10" y="8" width="14" height="12" rx="1" fill="none" stroke="#61D5BA" stroke-width="1.5"/>
+        <path d="M12 11L14 13L12 15M15.5 15H19" stroke="#61D5BA" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="32" y="19" class="t-white">PowerShell</text>
+      </g>
+      <g transform="translate(235, 40)">
+        <rect width="70" height="28" class="pill"/>
+        <path d="M12.5 7.5C12.2 7.2 11.8 7.2 11.5 7.5L10.2 8.8C10.5 9.3 10.7 9.9 10.7 10.5C10.7 12.2 9.3 13.5 7.7 13.5C6.1 13.5 4.7 12.2 4.7 10.5C4.7 9.9 4.9 9.3 5.2 8.8L3.9 7.5L0.5 10.9C0.2 11.2 0.2 11.7 0.5 12L5.5 17C5.8 17.3 6.3 17.3 6.6 17L12.5 11.1C12.8 10.8 12.8 10.3 12.5 10Z M7.7 3.5C6.1 3.5 4.7 4.8 4.7 6.5C4.7 7.1 4.9 7.7 5.2 8.2L6.5 6.9C6.2 6.4 6 5.8 6 5.2C6 4.3 6.8 3.5 7.7 3.5C8.6 3.5 9.4 4.3 9.4 5.2C9.4 5.8 9.2 6.4 8.9 6.9L10.2 8.2C10.5 7.7 10.7 7.1 10.7 6.5C10.7 4.8 9.3 3.5 7.7 3.5Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">Git</text>
+      </g>
+      <g transform="translate(315, 40)">
+        <rect width="90" height="28" class="pill"/>
+        <path d="M8 0C3.6 0 0 3.6 0 8C0 11.5 2.3 14.5 5.5 15.6C5.9 15.7 6 15.4 6 15.2V13.8C3.8 14.3 3.3 12.8 3.3 12.8C2.9 11.8 2.3 11.5 2.3 11.5C1.5 11 2.4 11 2.4 11C3.3 11.1 3.8 12 3.8 12C4.6 13.4 5.9 13 6.4 12.8C6.5 12.2 6.8 11.8 7.1 11.5C5.3 11.3 3.4 10.6 3.4 7.6C3.4 6.7 3.7 6 4.3 5.4C4.2 5.2 3.9 4.4 4.4 3.4C4.4 3.4 5.1 3.2 6.8 4.4C7.5 4.2 8.3 4.1 9 4.1C9.7 4.1 10.5 4.2 11.2 4.4C12.9 3.2 13.6 3.4 13.6 3.4C14.1 4.4 13.8 5.2 13.7 5.4C14.3 6 14.6 6.7 14.6 7.6C14.6 10.6 12.7 11.3 10.9 11.5C11.3 11.8 11.6 12.5 11.6 13.5V15.2C11.6 15.4 11.7 15.7 12.1 15.6C15.3 14.5 17.6 11.5 17.6 8C17.6 3.6 14.0 0 8 0Z" fill="#58FBD6" transform="translate(10, 6) scale(0.9)"/>
+        <text x="30" y="19" class="t-white">GitHub</text>
+      </g>
+      <g transform="translate(415, 40)">
+        <rect width="105" height="28" class="pill"/>
+        <path d="M2 4L0 6L2 8M6 4L8 6L6 8" stroke-width="1.5" stroke="#58FBD6" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(10, 7) scale(1.2)"/>
+        <text x="30" y="19" class="t-white">VS Code</text>
+      </g>
+      <g transform="translate(530, 40)">
+        <rect width="75" height="28" class="pill"/>
+        <text x="17" y="19" font-size="14" font-weight="bold" font-family="serif" fill="#58FBD6" text-anchor="middle">V</text>
+        <text x="28" y="19" class="t-white">Vim</text>
+      </g>
+    </g>
+
+    <!-- github_stats -->
+    <rect x="650" y="625" width="390" height="140" class="brd"/>
+    <text x="670" y="650" class="t-green">> github_stats</text>
+    <text x="670" y="675" class="t-bright-white">Total Stars Earned:</text><text x="870" y="675" class="t-green">12</text>
+    <text x="670" y="697" class="t-bright-white">Total Commits:</text><text x="870" y="697" class="t-green">3,2K+</text>
+    <text x="670" y="719" class="t-bright-white">Repositories:</text><text x="870" y="719" class="t-green">15</text>
+    <text x="670" y="741" class="t-bright-white">Longest Streak:</text><text x="870" y="741" class="t-green">42 days</text>
+
+    <!-- most_used_languages -->
+    <rect x="1060" y="625" width="310" height="140" class="brd"/>
+    <text x="1080" y="650" class="t-green">> most_used_languages</text>
+    <text x="1080" y="675" class="t-bright-white">Batchfile</text><text x="1180" y="675" class="t-white">42.1%</text><rect x="1240" y="663" width="70" height="12" class="bar-fg"/>
+    <text x="1080" y="697" class="t-bright-white">Python</text><text x="1180" y="697" class="t-white">28.7%</text><rect x="1240" y="685" width="48" height="12" class="bar-fg"/>
+    <text x="1080" y="719" class="t-bright-white">HTML</text><text x="1180" y="719" class="t-white">9.8%</text><rect x="1240" y="707" width="16" height="12" class="bar-fg"/>
+    <text x="1080" y="741" class="t-bright-white">JavaScript</text><text x="1180" y="741" class="t-white">8.3%</text><rect x="1240" y="729" width="14" height="12" class="bar-fg"/>
+
+    <!-- Bottom Status Line (With Seamless Masking Typing Effect) -->
+    <line x1="30" y1="795" x2="1370" y2="795" class="brd-line"/>
+    <text x="30" y="835" class="t-green">system@phantrongkien ~ $</text>
+    
+    <!-- Typing Text Container (Revealed smoothly through clip-path) -->
+    <text x="250" y="835" class="t-bright-white" clip-path="url(#typing-mask)">./build_perfect_tool.sh --target=future</text>
+    
+    <!-- Blinking Cursor -->
+    <rect x="245" y="820" width="10" height="18" fill="#2AEA5E">
+        <animate attributeName="x" values="245; 245; 610; 610; 245" keyTimes="0; 0.15; 0.6; 0.95; 1" dur="10s" repeatCount="indefinite" calcMode="linear"/>
+        <animate attributeName="opacity" values="1;0;1;0;1" dur="1s" repeatCount="indefinite" />
+    </rect>
+
+  </g>
+</svg>
