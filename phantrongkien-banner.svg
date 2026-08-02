@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 610" width="1180" height="610">
+<defs>
+  <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#7C3AED"/>
+    <stop offset="50%" stop-color="#22D3EE"/>
+    <stop offset="100%" stop-color="#10B981"/>
+  </linearGradient>
+</defs>
+<rect width="100%" height="100%" rx="24" fill="#030712"/>
+<rect x="30" y="30" width="400" height="550" rx="18" fill="#0F172A" stroke="url(#g)"/>
+<rect x="460" y="30" width="690" height="550" rx="18" fill="#0F172A" stroke="url(#g)"/>
+<text x="60" y="90" fill="url(#g)" font-family="monospace" font-size="28">PHANTRONGKIEN</text>
+<text x="500" y="90" fill="#F8FAFC" font-family="monospace" font-size="34">&gt; whoami</text>
+<text x="500" y="140" fill="#22D3EE" font-family="monospace" font-size="28">Phan Trong Kien</text>
+<text x="500" y="210" fill="#94A3B8" font-family="monospace" font-size="24">Building Windows tools</text>
+<text x="500" y="250" fill="#94A3B8" font-family="monospace" font-size="24">Learning Python</text>
+<text x="500" y="290" fill="#94A3B8" font-family="monospace" font-size="24">Cybersecurity Research</text>
+<text x="70" y="180" fill="#22D3EE" font-family="monospace" font-size="16">
+██████╗ ██╗  ██╗
+</text>
+</svg>
