@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850" width="1200" height="850">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .brd { stroke: #30363d; stroke-width: 2; fill: none; rx: 8px; }
+      .t-green { fill: #39d353; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-white { fill: #c9d1d9; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-gray { fill: #8b949e; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-blue { fill: #58a6ff; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+      .t-title { fill: #39d353; font-family: 'Courier New', Courier, monospace; font-size: 44px; font-weight: bold; }
+      .bar-bg { fill: #30363d; rx: 3px; }
+      .bar-fg { fill: #39d353; rx: 3px; }
+      .ascii {
+        fill: #39d353;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 11px;
+        white-space: pre;
+        animation: glitch-color 5s infinite;
+      }
+      .ascii-wrap {
+        animation: float 4s ease-in-out infinite, glitch-skew 5s infinite;
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes glitch-color {
+        0%, 92% { fill: #39d353; }
+        93% { fill: #ff003c; }
+        94% { fill: #00e5ff; }
+        95% { fill: #39d353; }
+        96% { fill: #ff003c; }
+        97%, 100% { fill: #39d353; }
+      }
+      @keyframes glitch-skew {
+        0%, 92% { transform: skew(0deg) translate(0, 0); }
+        93% { transform: skew(10deg) translate(-3px, 2px); }
+        94% { transform: skew(-10deg) translate(3px, -2px); }
+        95% { transform: skew(0deg) translate(0, 0); }
+        96% { transform: skew(5deg) translate(2px, 2px); }
+        97%, 100% { transform: skew(0deg) translate(0, 0); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background & Window Frame -->
+  <rect width="1200" height="850" class="bg" rx="10"/>
+  <rect x="10" y="10" width="1180" height="830" class="brd"/>
+  <circle cx="35" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="55" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="75" cy="30" r="6" fill="#27c93f"/>
+  <text x="100" y="35" class="t-gray">phantrongkien / README.md</text>
+  <text x="1020" y="35" class="t-gray">LAST COMMIT: NOW</text>
+  <line x1="10" y1="50" x2="1190" y2="50" class="brd"/>
+
+  <!-- ASCII Skull Art (Animated & Glitching) -->
+  <g transform="translate(40, 90)">
+    <g class="ascii-wrap">
+      <text class="ascii">
+        <tspan x="0" dy="1.2em">                 ..::cccccc:.</tspan>
+        <tspan x="0" dy="1.2em">            ..cloddoc..::lolc::..</tspan>
+        <tspan x="0" dy="1.2em">          ..;lodxk0O00KX0o:::..:.</tspan>
+        <tspan x="0" dy="1.2em">          .c0NMMMMMMMMMMMMMMHOo::..</tspan>
+        <tspan x="0" dy="1.2em">         .dNMMMMMMMMMMMMMMMMMMMMWd:..</tspan>
+        <tspan x="0" dy="1.2em">         ;dMMMMMMMMMMMMMMMMMMMMMMNo..</tspan>
+        <tspan x="0" dy="1.2em">         ;kMMMMMMMMMMMMMMMMMMMMMMMMk:.</tspan>
+        <tspan x="0" dy="1.2em">         ;kMMMMMMMMMMMMMMWx::::::::MMx.</tspan>
+        <tspan x="0" dy="1.2em">        :xMMMMMMMMMMMWX:::..::.:::MMd.</tspan>
+        <tspan x="0" dy="1.2em">       ;OMMMMMMWX?::::..       .Mds.</tspan>
+        <tspan x="0" dy="1.2em">       ;KMMMMMMK;    .::kX..  ..;MMMk,.</tspan>
+        <tspan x="0" dy="1.2em">       :XMMM::;:::.,;olc:MMkXcc:;MMXx. ;</tspan>
+        <tspan x="0" dy="1.2em">       :dMMM;dMMM,.:;okOko:,.;::;::MMMO: ;</tspan>
+        <tspan x="0" dy="1.2em">       ;kMMM::kMMM::xNMMNk::.  .:;MMMk.:</tspan>
+        <tspan x="0" dy="1.2em">       ;kMMM:.;kMMMk::O0MMX00::. .;MMMHc</tspan>
+        <tspan x="0" dy="1.2em">       :kMMMk.::xkWMK:.;xkMMMNXx:.;kMMMMk.</tspan>
+        <tspan x="0" dy="1.2em">       ..XMMMO.   :ocOMMMMMMMOdo:..:oMMMMX.</tspan>
+        <tspan x="0" dy="1.2em">       .:dMMMMk.   ::cbbB0otools:  ;kMMMMd..</tspan>
+        <tspan x="0" dy="1.2em">      .,kMMMMWk    :.;;oNMMMWoc... .ikMMMMMk,.</tspan>
+        <tspan x="0" dy="1.2em">      .:kNMMMMMk.:c;  MOOc..    .kNMMMMMMMd..</tspan>
+        <tspan x="0" dy="1.2em">     ..dNMMMMMMMDx:.   ::cOdO:.   .xNMMMMMMMMNd.:.</tspan>
+        <tspan x="0" dy="1.2em">    ..oXMMMMMMMMMMMMOx..  ::cOO::...  .oXMMMMMMMMMMMMX::.</tspan>
+        <tspan x="0" dy="1.2em">    .,lk00XWMMMMMMMMMM0kl.  :::.::..;okOXWMMMMMMMMMMMK;:.</tspan>
+        <tspan x="0" dy="1.2em">    .;c:clodk0XXMMMMMMMMMMMMNko. .:.  .:okQNMMMMMMMMMMMMNNo;,. </tspan>
+        <tspan x="0" dy="1.2em">    .;::;looccXXMMMMMMMMMMMNo..     .:okNMMMMMMMMMMMMMMO:.:. </tspan>
+        <tspan x="0" dy="1.2em">     ..,,.......,,.......           ......,....,....</tspan>
+      </text>
+    </g>
+  </g>
+
+  <!-- > whoami section -->
+  <rect x="500" y="70" width="450" height="360" class="brd"/>
+  <text x="520" y="95" class="t-green">> whoami</text>
+  <text x="520" y="145" class="t-title">Phantrongkien</text>
+  <text x="520" y="175" class="t-gray">aka </text>
+  <text x="555" y="175" class="t-blue">kiendev.exe</text>
+  <text x="520" y="210" class="t-green">> Developer | Builder | Learner</text>
+  <line x1="520" y1="225" x2="930" y2="225" class="brd" stroke-width="1"/>
+  <text x="520" y="255" class="t-white">My coding journey started with learning about the batch files</text>
+  <text x="520" y="275" class="t-white">available on Windows, I am trying to design the most perfect</text>
+  <text x="520" y="295" class="t-white">multi-tool possible.</text>
+  <text x="520" y="325" class="t-white">After mastering batch, I plan to switch to writing this tool</text>
+  <text x="520" y="345" class="t-white">in Python to optimize and expand its features.</text>
+  <text x="520" y="375" class="t-white">Although I'm just a skid at the moment, I hope to be able to</text>
+  <text x="520" y="395" class="t-white">create many unique and useful tools in the future.</text>
+  <text x="520" y="420" class="t-green">kiendev@github ~ $ █</text>
+
+  <!-- ./info section -->
+  <rect x="970" y="70" width="200" height="360" class="brd"/>
+  <text x="990" y="95" class="t-green">./info</text>
+  <text x="990" y="130" class="t-gray">📍 Location</text>
+  <text x="990" y="150" class="t-white">Vietnam</text>
+  <text x="990" y="180" class="t-gray">🎓 Education</text>
+  <text x="990" y="200" class="t-white">High School Student</text>
+  <text x="990" y="230" class="t-gray">🧠 Current Focus</text>
+  <text x="990" y="250" class="t-white">Building tools</text>
+  <text x="990" y="270" class="t-white">&amp; Cyber Security</text>
+  <text x="990" y="300" class="t-gray">🌐 Portfolio</text>
+  <text x="990" y="320" class="t-blue">Coming soon...</text>
+  <text x="990" y="350" class="t-gray">✉️ Email</text>
+  <text x="990" y="370" class="t-blue">phantrongkien.dev</text>
+  <text x="990" y="390" class="t-blue">@gmail.com</text>
+
+  <!-- system@phantrongkien -->
+  <rect x="30" y="450" width="220" height="260" class="brd"/>
+  <text x="50" y="475" class="t-green">system@phantrongkien</text>
+  <text x="50" y="510" class="t-green">OS</text><text x="110" y="510" class="t-white">Windows 11</text>
+  <text x="50" y="540" class="t-green">SHELL</text><text x="110" y="540" class="t-white">PowerShell 7</text>
+  <text x="50" y="570" class="t-green">EDITOR</text><text x="110" y="570" class="t-white">VS Code</text>
+  <text x="50" y="600" class="t-green">TIMEZONE</text><text x="110" y="600" class="t-white">GMT+7</text>
+  <text x="50" y="630" class="t-green">UPTIME</text><text x="110" y="630" class="t-white">24/7 Learning</text>
+  <text x="50" y="660" class="t-green">FOCUS</text><text x="110" y="660" class="t-white">Building tools &amp;</text>
+  <text x="110" y="680" class="t-white">Learning security</text>
+
+  <!-- skills.progress -->
+  <rect x="270" y="450" width="210" height="260" class="brd"/>
+  <text x="290" y="475" class="t-green">skills.progress</text>
+  <text x="290" y="510" class="t-white">Batch</text>
+  <rect x="380" y="500" width="50" height="10" class="bar-bg"/><rect x="380" y="500" width="45" height="10" class="bar-fg"/><text x="440" y="510" class="t-blue">90%</text>
+  <text x="290" y="540" class="t-white">Python</text>
+  <rect x="380" y="530" width="50" height="10" class="bar-bg"/><rect x="380" y="530" width="37" height="10" class="bar-fg"/><text x="440" y="540" class="t-blue">75%</text>
+  <text x="290" y="570" class="t-white">Networking</text>
+  <rect x="380" y="560" width="50" height="10" class="bar-bg"/><rect x="380" y="560" width="35" height="10" class="bar-fg"/><text x="440" y="570" class="t-blue">70%</text>
+  <text x="290" y="600" class="t-white">Cyber Sec</text>
+  <rect x="380" y="590" width="50" height="10" class="bar-bg"/><rect x="380" y="590" width="32" height="10" class="bar-fg"/><text x="440" y="600" class="t-blue">65%</text>
+  <text x="290" y="630" class="t-white">Web Dev</text>
+  <rect x="380" y="620" width="50" height="10" class="bar-bg"/><rect x="380" y="620" width="30" height="10" class="bar-fg"/><text x="440" y="630" class="t-blue">60%</text>
+  <text x="290" y="660" class="t-white">Linux</text>
+  <rect x="380" y="650" width="50" height="10" class="bar-bg"/><rect x="380" y="650" width="30" height="10" class="bar-fg"/><text x="440" y="660" class="t-blue">60%</text>
+  <text x="290" y="690" class="t-white">Problem Solv</text>
+  <rect x="380" y="680" width="50" height="10" class="bar-bg"/><rect x="380" y="680" width="42" height="10" class="bar-fg"/><text x="440" y="690" class="t-blue">85%</text>
+
+  <!-- tech_stack -->
+  <rect x="500" y="450" width="670" height="110" class="brd"/>
+  <text x="520" y="475" class="t-green">> tech_stack</text>
+  <g transform="translate(520, 490)">
+    <rect x="0" y="0" width="90" height="25" class="brd"/><text x="15" y="17" class="t-white">Windows</text>
+    <rect x="100" y="0" width="80" height="25" class="brd"/><text x="115" y="17" class="t-white">Linux</text>
+    <rect x="190" y="0" width="80" height="25" class="brd"/><text x="205" y="17" class="t-white">Python</text>
+    <rect x="280" y="0" width="70" height="25" class="brd"/><text x="295" y="17" class="t-white">HTML5</text>
+    <rect x="360" y="0" width="70" height="25" class="brd"/><text x="375" y="17" class="t-white">CSS3</text>
+    <rect x="440" y="0" width="110" height="25" class="brd"/><text x="455" y="17" class="t-white">JavaScript</text>
+
+    <rect x="0" y="35" width="80" height="25" class="brd"/><text x="15" y="52" class="t-white">Batch</text>
+    <rect x="90" y="35" width="110" height="25" class="brd"/><text x="105" y="52" class="t-white">PowerShell</text>
+    <rect x="210" y="35" width="60" height="25" class="brd"/><text x="225" y="52" class="t-white">Git</text>
+    <rect x="280" y="35" width="80" height="25" class="brd"/><text x="295" y="52" class="t-white">GitHub</text>
+    <rect x="370" y="35" width="90" height="25" class="brd"/><text x="385" y="52" class="t-white">VS Code</text>
+    <rect x="470" y="35" width="60" height="25" class="brd"/><text x="485" y="52" class="t-white">Vim</text>
+  </g>
+
+  <!-- github_stats -->
+  <rect x="500" y="580" width="370" height="130" class="brd"/>
+  <text x="520" y="605" class="t-green">> github_stats</text>
+  <text x="520" y="630" class="t-gray">Total Stars Earned:</text><text x="700" y="630" class="t-green">12</text>
+  <text x="520" y="650" class="t-gray">Total Commits:</text><text x="700" y="650" class="t-green">3,2K+</text>
+  <text x="520" y="670" class="t-gray">Repositories:</text><text x="700" y="670" class="t-green">15</text>
+  <text x="520" y="690" class="t-gray">Contributions 2025:</text><rect x="700" y="680" width="80" height="10" class="bar-fg"/><text x="790" y="690" class="t-blue">85%</text>
+  <text x="520" y="710" class="t-gray">Longest Streak:</text><text x="700" y="710" class="t-green">42 days</text>
+
+  <!-- most_used_languages -->
+  <rect x="890" y="580" width="280" height="130" class="brd"/>
+  <text x="910" y="605" class="t-green">> most_used_languages</text>
+  <text x="910" y="630" class="t-gray">Batchfile</text><text x="1000" y="630" class="t-white">42.1%</text><rect x="1060" y="620" width="90" height="10" class="bar-fg"/>
+  <text x="910" y="650" class="t-gray">Python</text><text x="1000" y="650" class="t-white">28.7%</text><rect x="1060" y="640" width="60" height="10" class="bar-fg"/>
+  <text x="910" y="670" class="t-gray">HTML</text><text x="1000" y="670" class="t-white">9.8%</text><rect x="1060" y="660" width="20" height="10" class="bar-fg"/>
+  <text x="910" y="690" class="t-gray">JavaScript</text><text x="1000" y="690" class="t-white">8.3%</text><rect x="1060" y="680" width="15" height="10" class="bar-fg"/>
+  <text x="910" y="710" class="t-gray">CSS</text><text x="1000" y="710" class="t-white">6.1%</text><rect x="1060" y="700" width="10" height="10" class="bar-fg"/>
+
+  <!-- Bottom Status Line -->
+  <line x1="30" y1="740" x2="1170" y2="740" class="brd"/>
+  <text x="30" y="775" class="t-green">~ $ Building the</text>
+  <text x="175" y="775" class="t-green" font-weight="bold">perfect multi-tool.</text>
+  <text x="360" y="775" class="t-gray">One script at a time.</text>
+</svg>
